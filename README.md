@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Learn Math With Jihad — Online Math Tutoring</title>
+
+  <meta name="description"
+        content="Mathematics tutoring by Jihad Rana, Department of Mathematics, University of Rajshahi. Online and offline tutoring for school, college and university students.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#182640;
+      --navy-deep:#0f1a2e;
+      --paper:#f6f3ec;
+      --paper-line:#d8d3c4;
+      --gold:#c9982e;
+      --ink:#1c2433;
+      --muted:#5b6577;
+      --green:#25D366;
+      --facebook:#1877F2;
+      --max:920px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:'Space Grotesk', sans-serif;
+      line-height:1.55;
+    }
+
+    h1,h2,h3{
+      font-family:'Fraunces', serif;
+      margin:0 0 .4em 0;
+      font-weight:600;
+      color:var(--navy-deep);
+    }
+
+    a{
+      color:inherit;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(246,243,236,0.94);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid var(--paper-line);
+    }
+
+    nav .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding-top:16px;
+      padding-bottom:16px;
+    }
+
+    .brand{
+      font-family:'Fraunces', serif;
+      font-weight:700;
+      font-size:1.15rem;
+      color:var(--navy-deep);
+      text-decoration:none;
+    }
+
+    .navlinks{
+      display:flex;
+      gap:28px;
+      font-size:.95rem;
+    }
+
+    .navlinks a{
+      text-decoration:none;
+      color:var(--muted);
+    }
+
+    .navlinks a:hover{
+      color:var(--navy-deep);
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+
+    header.hero{
+      padding:80px 0 64px;
+      background:var(--paper);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero .wrap{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:48px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:clamp(2.1rem, 4.2vw, 3.1rem);
+      line-height:1.12;
+      letter-spacing:-0.01em;
+    }
+
+    .hero p.lede{
+      font-size:1.1rem;
+      color:var(--muted);
+      max-width:44ch;
+      margin-bottom:1.6em;
+    }
+
+    .intro{
+      margin-bottom:24px;
+    }
+
+    .intro strong{
+      display:block;
+      font-size:1.05rem;
+      color:var(--navy-deep);
+    }
+
+    .intro span{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 24px;
+      border-radius:3px;
+      font-size:.98rem;
+      text-decoration:none;
+      font-weight:500;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:var(--navy-deep);
+      color:var(--paper);
+    }
+
+    .btn-primary:hover{
+      background:var(--navy);
+    }
+
+    .btn-ghost{
+      border-color:var(--navy-deep);
+      color:var(--navy-deep);
+      background:transparent;
+    }
+
+    .btn-ghost:hover{
+      background:var(--navy-deep);
+      color:var(--paper);
+    }
+
+    /* =========================
+       MATH VISUAL
+       ========================= */
+
+    .math-visual{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* =========================
+       SECTIONS
+       ========================= */
+
+    section{
+      padding:64px 0;
+    }
+
+    section.alt{
+      background:#efe9da;
+    }
+
+    .section-head{
+      max-width:56ch;
+      margin-bottom:40px;
+    }
+
+    .section-head h2{
+      font-size:1.9rem;
+    }
+
+    .section-head p{
+      color:var(--muted);
+    }
+
+    /* =========================
+       SUBJECTS
+       ========================= */
+
+    .subjects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:1px;
+      background:var(--paper-line);
+      border:1px solid var(--paper-line);
+    }
+
+    .subject{
+      background:var(--paper);
+      padding:26px 22px;
+    }
+
+    .subject h3{
+      font-size:1.1rem;
+      margin-bottom:.3em;
+    }
+
+    .subject p{
+      color:var(--muted);
+      font-size:.94rem;
+      margin:0;
+    }
+
+    /* =========================
+       STEPS
+       ========================= */
+
+    .steps{
+      list-style:none;
+      margin:0;
+      padding:0;
+      counter-reset:step;
+    }
+
+    .steps li{
+      counter-increment:step;
+      display:grid;
+      grid-template-columns:44px 1fr;
+      gap:18px;
+      padding:20px 0;
+      border-top:1px solid var(--paper-line);
+    }
+
+    .steps li:last-child{
+      border-bottom:1px solid var(--paper-line);
+    }
+
+    .steps li::before{
+      content:counter(step);
+      font-family:'Fraunces', serif;
+      font-size:1.3rem;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .steps h3{
+      font-size:1.05rem;
+      margin-bottom:.2em;
+    }
+
+    .steps p{
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* =========================
+       TESTIMONIAL
+       ========================= */
+
+    blockquote{
+      font-family:'Fraunces', serif;
+      font-size:1.4rem;
+      font-weight:500;
+      max-width:56ch;
+      margin:0 auto;
+      text-align:center;
+      color:var(--navy-deep);
+      line-height:1.4;
+    }
+
+    blockquote cite{
+      display:block;
+      margin-top:18px;
+      font-family:'Space Grotesk', sans-serif;
+      font-style:normal;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+
+    /* =========================
+       CONTACT
+       ========================= */
+
+    .contact-box{
+      background:var(--navy-deep);
+      color:var(--paper);
+      border-radius:4px;
+      padding:48px 40px;
+    }
+
+    .contact-box h2{
+      color:var(--paper);
+    }
+
+    .contact-box p{
+      color:#c7cede;
+      margin:0;
+    }
+
+    .contact-info{
+      margin:24px 0;
+    }
+
+    .contact-info strong{
+      display:block;
+      font-size:1.2rem;
+      color:white;
+      margin-bottom:4px;
+    }
+
+    .contact-info span{
+      display:block;
+      color:#c7cede;
+      font-size:.95rem;
+    }
+
+    .contact-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .contact-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:11px 17px;
+      border-radius:4px;
+      text-decoration:none;
+      font-weight:500;
+      font-size:.92rem;
+      transition:.2s;
+    }
+
+    .email-link{
+      background:var(--gold);
+      color:var(--navy-deep);
+    }
+
+    .email-link:hover{
+      background:#dcae4c;
+    }
+
+    .whatsapp-link{
+      background:var(--green);
+      color:white;
+    }
+
+    .whatsapp-link:hover{
+      opacity:.9;
+    }
+
+    .facebook-link{
+      background:var(--facebook);
+      color:white;
+    }
+
+    .facebook-link:hover{
+      opacity:.9;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer{
+      padding:32px 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:.85rem;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width:760px){
+
+      .hero .wrap{
+        grid-template-columns:1fr;
+      }
+
+      .navlinks{
+        display:none;
+      }
+
+      .contact-box{
+        padding:36px 25px;
+      }
+
+      .contact-links{
+        flex-direction:column;
+      }
+
+      .contact-link{
+        justify-content:center;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{
+        scroll-behavior:auto;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+     ========================= -->
+
+<nav>
+
+  <div class="wrap">
+
+    <a class="brand" href="#top">
+      Learn Math with Jihad
+    </a>
+
+    <div class="navlinks">
+
+      <a href="#subjects">
+        Subjects
+      </a>
+
+      <a href="#how">
+        How it works
+      </a>
+
+      <a href="#testimonial">
+        Results
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<header class="hero" id="top">
+
+  <div class="wrap">
+
+    <div>
+
+      <div class="intro">
+
+        <strong>
+          Jihad Rana
+        </strong>
+
+        <span>
+          Department of Mathematics, University of Rajshahi
+        </span>
+
+      </div>
+
+
+      <h1>
+        Math makes sense once someone shows their work.
+      </h1>
+
+
+      <p class="lede">
+
+        One-on-one online &amp; offline tutoring in algebra,
+        calculus, geometry, statistics and probability —
+        explained clearly, step by step.
+
+      </p>
+
+
+      <div class="cta-row">
+
+        <a class="btn btn-primary" href="#contact">
+          Contact Me
+        </a>
+
+        <a class="btn btn-ghost" href="#subjects">
+          See what I teach
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         MATHEMATICS VISUAL
+         ========================= -->
+
+    <svg
+      class="math-visual"
+      viewBox="0 0 420 320"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Mathematics illustration with coordinate geometry and calculus"
+    >
+
+      <!-- Background -->
+
+      <rect
+        x="0"
+        y="0"
+        width="420"
+        height="320"
+        rx="6"
+        fill="#efe9da"
+      />
+
+
+      <!-- Grid -->
+
+      <g
+        stroke="#d8d3c4"
+        stroke-width="1"
+      >
+
+        <line x1="0" y1="40" x2="420" y2="40"/>
+        <line x1="0" y1="80" x2="420" y2="80"/>
+        <line x1="0" y1="120" x2="420" y2="120"/>
+        <line x1="0" y1="160" x2="420" y2="160"/>
+        <line x1="0" y1="200" x2="420" y2="200"/>
+        <line x1="0" y1="240" x2="420" y2="240"/>
+        <line x1="0" y1="280" x2="420" y2="280"/>
+
+        <line x1="40" y1="0" x2="40" y2="320"/>
+        <line x1="80" y1="0" x2="80" y2="320"/>
+        <line x1="120" y1="0" x2="120" y2="320"/>
+        <line x1="160" y1="0" x2="160" y2="320"/>
+        <line x1="200" y1="0" x2="200" y2="320"/>
+        <line x1="240" y1="0" x2="240" y2="320"/>
+        <line x1="280" y1="0" x2="280" y2="320"/>
+        <line x1="320" y1="0" x2="320" y2="320"/>
+        <line x1="360" y1="0" x2="360" y2="320"/>
+        <line x1="400" y1="0" x2="400" y2="320"/>
+
+      </g>
+
+
+      <!-- Coordinate axes -->
+
+      <line
+        x1="35"
+        y1="245"
+        x2="390"
+        y2="245"
+        stroke="#182640"
+        stroke-width="2.5"
+      />
+
+      <line
+        x1="85"
+        y1="25"
+        x2="85"
+        y2="290"
+        stroke="#182640"
+        stroke-width="2.5"
+      />
+
+
+      <!-- Arrow heads -->
+
+      <polygon
+        points="390,245 380,240 380,250"
+        fill="#182640"
+      />
+
+      <polygon
+        points="85,25 80,35 90,35"
+        fill="#182640"
+      />
+
+
+      <!-- Function curve -->
+
+      <path
+        d="M 90 225
+           C 125 215, 145 185, 170 155
+           C 195 125, 220 95, 245 105
+           C 270 115, 280 165, 305 185
+           C 330 205, 355 195, 385 170"
+        fill="none"
+        stroke="#c9982e"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+
+
+      <!-- Tangent line -->
+
+      <line
+        x1="170"
+        y1="155"
+        x2="285"
+        y2="85"
+        stroke="#182640"
+        stroke-width="2"
+        stroke-dasharray="7 6"
+      />
+
+
+      <!-- Important point -->
+
+      <circle
+        cx="245"
+        cy="105"
+        r="6"
+        fill="#182640"
+      />
+
+
+      <!-- Formula -->
+
+      <text
+        x="105"
+        y="55"
+        font-family="Georgia, serif"
+        font-size="24"
+        font-style="italic"
+        fill="#182640"
+      >
+        ∫ f(x) dx
+      </text>
+
+
+      <text
+        x="285"
+        y="55"
+        font-family="Georgia, serif"
+        font-size="20"
+        font-style="italic"
+        fill="#182640"
+      >
+        dy/dx
+      </text>
+
+
+      <text
+        x="255"
+        y="96"
+        font-family="Space Grotesk, sans-serif"
+        font-size="12"
+        fill="#182640"
+      >
+        tangent
+      </text>
+
+
+      <text
+        x="365"
+        y="265"
+        font-family="Space Grotesk, sans-serif"
+        font-size="13"
+        fill="#182640"
+      >
+        x
+      </text>
+
+
+      <text
+        x="65"
+        y="38"
+        font-family="Space Grotesk, sans-serif"
+        font-size="13"
+        fill="#182640"
+      >
+        y
+      </text>
+
+    </svg>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     SUBJECTS
+     ========================= -->
+
+<section id="subjects" class="alt">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <h2>
+        What we can work on
+      </h2>
+
+      <p>
+        Sessions are built around your syllabus
+        and the problems you're actually stuck on.
+      </p>
+
+    </div>
+
+
+    <div class="subjects">
+
+      <div class="subject">
+
+        <h3>
+          Algebra &amp; Precalculus
+        </h3>
+
+        <p>
+          Equations, functions, sequences —
+          building the foundation everything else sits on.
+        </p>
+
+      </div>
+
+
+      <div class="subject">
+
+        <h3>
+          Calculus I &amp; II
+        </h3>
+
+        <p>
+          Limits, derivatives, integrals,
+          and the intuition behind why each rule works.
+        </p>
+
+      </div>
+
+
+      <div class="subject">
+
+        <h3>
+          Statistics &amp; Probability
+        </h3>
+
+        <p>
+          Distributions, probability,
+          statistical concepts and data analysis.
+        </p>
+
+      </div>
+
+
+      <div class="subject">
+
+        <h3>
+          Exam &amp; Admission Prep
+        </h3>
+
+        <p>
+          Timed practice and targeted review
+          ahead of university or board exams.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+     ========================= -->
+
+<section id="how">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <h2>
+        How a session works
+      </h2>
+
+      <p>
+        A simple step-by-step approach
+        focused on understanding.
+      </p>
+
+    </div>
+
+
+    <ol class="steps">
+
+      <li>
+
+        <div>
+
+          <h3>
+            Send your topic or problem set
+          </h3>
+
+          <p>
+            A photo, a PDF, or just the chapter name —
+            whatever you have.
+          </p>
+
+        </div>
+
+      </li>
+
+
+      <li>
+
+        <div>
+
+          <h3>
+            Online / Offline session
+          </h3>
+
+          <p>
+            Work through the topic step by step
+            using examples and explanations.
+          </p>
+
+        </div>
+
+      </li>
+
+
+      <li>
+
+        <div>
+
+          <h3>
+            You solve, I check
+          </h3>
+
+          <p>
+            You work through similar problems
+            and I correct the reasoning as you go.
+          </p>
+
+        </div>
+
+      </li>
+
+
+      <li>
+
+        <div>
+
+          <h3>
+            You get a short recap
+          </h3>
+
+          <p>
+            Notes and practice problems to try
+            before the next session.
+          </p>
+
+        </div>
+
+      </li>
+
+    </ol>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     TESTIMONIAL
+     ========================= -->
+
+<section id="testimonial" class="alt">
+
+  <div class="wrap">
+
+    <blockquote>
+
+      "I stopped memorizing formulas
+      and started understanding where they came from."
+
+      <cite>
+        — Former student
+      </cite>
+
+    </blockquote>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+     ========================= -->
+
+<section id="contact">
+
+  <div class="wrap">
+
+    <div class="contact-box">
+
+      <h2>
+        Let's talk about your Math
+      </h2>
+
+      <p>
+        Have a question, need tutoring,
+        or want to discuss a topic?
+        Feel free to contact me.
+      </p>
+
+
+      <div class="contact-info">
+
+        <strong>
+          Jihad Rana
+        </strong>
+
+        <span>
+          Department of Mathematics,
+          University of Rajshahi
+        </span>
+
+      </div>
+
+
+      <div class="contact-links">
+
+        <!-- EMAIL -->
+
+        <a
+          class="contact-link email-link"
+          href="mailto:jihadranaru71@gmail.com?subject=Math%20Tutoring%20Inquiry"
+        >
+          ✉ Email
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+          class="contact-link whatsapp-link"
+          href="https://api.whatsapp.com/qr/JF2SWCI3AETIK1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp
+        </a>
+
+
+        <!-- FACEBOOK -->
+
+        <a
+          class="contact-link facebook-link"
+          href="https://www.facebook.com/jihadrana04"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    &copy;
+    <span id="year"></span>
+    Learn Math with Jihad.
+    Built by Jihad Rana.
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+     ========================= -->
+
+<script>
+
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>
